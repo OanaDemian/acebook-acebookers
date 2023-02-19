@@ -10,7 +10,7 @@ const Comments = ({ post_id }) => {
   // Changing the state of the comments and token hooks
   useEffect(() => {
     if (token) {
-      fetch("/comments", {
+      fetch("https://acebookers-5bku.onrender.com/comments", {
         headers: {
           Authorization: `Bearer ${token}`,
           post_id: `${post_id}`,

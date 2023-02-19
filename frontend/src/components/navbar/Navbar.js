@@ -16,7 +16,7 @@ const Navbar = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`/search?q=${encodeURIComponent(searchTerm)}`)
+    fetch(`https://acebookers-5bku.onrender.com/search?q=${encodeURIComponent(searchTerm)}`)
       .then(response => response.json())
       .then(data => {
         setSearchResults(data);

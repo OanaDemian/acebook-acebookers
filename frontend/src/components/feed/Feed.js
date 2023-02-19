@@ -11,10 +11,10 @@ const Feed = ({ navigate }) => {
   // Changing the state of the posts and token hooks
   useEffect(() => {
     if (token) {
-      fetch("/posts", {
+      fetch("https://acebookers-5bku.onrender.com/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
-        }
+        },
       })
         .then((response) => response.json())
         .then(async (data) => {
@@ -28,30 +28,32 @@ const Feed = ({ navigate }) => {
   if (token) {
     return (
       <>
-      <Navbar />
-      <body className="text-center">
-        <main className="col-md-6  mx-auto">
-        <div className="container-fluid">
-        <div className="card">
-        <CreatePost
-          setPosts={setPosts}
-          token={token}
-        />
-        </div>
-        <br></br>
-        <br></br>
-        <div className="card">
-        <div className="container-fluid " id="feed" role="feed">
-          {/*  <h4 className="bg-primary-subtle text-emphasis-primary">Posts</h4> */}
-          {/* {console.log(posts)} */}
-          {posts.map((post) => (
-            <Post post={post} token={token} setPosts={setPosts} key={post._id} />
-          ))}
-        </div>
-        </div>
-      </div>
-      </main>
-      </body>
+        <Navbar />
+        <body className="text-center">
+          <main className="col-md-6  mx-auto">
+            <div className="container-fluid">
+              <div className="card">
+                <CreatePost setPosts={setPosts} token={token} />
+              </div>
+              <br></br>
+              <br></br>
+              <div className="card">
+                <div className="container-fluid " id="feed" role="feed">
+                  {/*  <h4 className="bg-primary-subtle text-emphasis-primary">Posts</h4> */}
+                  {/* {console.log(posts)} */}
+                  {posts.map((post) => (
+                    <Post
+                      post={post}
+                      token={token}
+                      setPosts={setPosts}
+                      key={post._id}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </main>
+        </body>
       </>
     );
   } else {

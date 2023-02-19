@@ -9,7 +9,7 @@ const LogInForm = ({ navigate }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let response = await fetch( '/tokens', {
+    let response = await fetch( 'https://acebookers-5bku.onrender.com/tokens', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

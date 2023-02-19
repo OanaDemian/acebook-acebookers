@@ -19,7 +19,7 @@ const CreateComment = ({ token, post_id, setComments, setToken }) => {
     event.preventDefault();
     console.log(post_id);
 
-    let response = await fetch("/comments", {
+    let response = await fetch("https://acebookers-5bku.onrender.com/comments", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ const CreateComment = ({ token, post_id, setComments, setToken }) => {
       let data = await response.json()
       window.localStorage.setItem("token", data.token)
       setComment("")
-      let responseTwo = await fetch("/comments", {
+      let responseTwo = await fetch("https://acebookers-5bku.onrender.com/comments", {
         headers: {
           Authorization: `Bearer ${data.token}`
         }

@@ -21,7 +21,7 @@ const SignUpForm = ({ navigate }) => {
     event.preventDefault();
     if (validateEmail()) {
       setEmailError(false);
-      fetch("/users", {
+      fetch("https://acebookers-5bku.onrender.com/users", {
         method: "post",
         headers: {
           "Content-Type": "application/json",

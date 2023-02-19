@@ -5,7 +5,7 @@ const Profile = ({userId}) => {
   const [user, setUser] = useState(null);
 
   useEffect(() =>{
-    fetch(`/users/user${userId}`)
+    fetch(`https://acebookers-5bku.onrender.com/users/user${userId}`)
       .then(response => response.json())
       .then(data => setUser(data))
       .catch(error => console.log(error));

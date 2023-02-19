@@ -21,7 +21,7 @@ const Post = ({ post, token, setPosts}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("Handle submit executed")
-    let response = await fetch("/posts", {
+    let response = await fetch("https://acebookers-5bku.onrender.com/posts", {
       method: "delete",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const Post = ({ post, token, setPosts}) => {
       console.log("post deleted")
       let data = await response.json()
       window.localStorage.setItem("token", data.token)
-      let responseTwo = await fetch("/posts", {
+      let responseTwo = await fetch("https://acebookers-5bku.onrender.com/posts", {
         headers: {
           Authorization: `Bearer ${data.token}`,
         }
