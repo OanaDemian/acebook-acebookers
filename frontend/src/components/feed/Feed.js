@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Post from "../post/Post";
 import CreatePost from "../createPost/CreatePost";
 import Navbar from "../navbar/Navbar";
+import { baseUrl } from "../../env_variables";
+
 
 const Feed = ({ navigate }) => {
   const [posts, setPosts] = useState([]);
@@ -11,7 +13,7 @@ const Feed = ({ navigate }) => {
   // Changing the state of the posts and token hooks
   useEffect(() => {
     if (token) {
-      fetch("https://acebookers-5bku.onrender.com/posts", {
+      fetch(`${baseUrl}/posts`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
