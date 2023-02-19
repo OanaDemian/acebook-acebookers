@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
+    "serve": "node app.js",
     "start:test": "MONGODB_URL='mongodb://0.0.0.0/acebook_test' npm start",
     "test": "jest"
   },
