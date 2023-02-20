@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./LoginForm.css";
+import { baseUrl } from '../../env_variables';
 
 
 const LogInForm = ({ navigate }) => {
@@ -9,7 +10,7 @@ const LogInForm = ({ navigate }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let response = await fetch( 'https://acebookers-5bku.onrender.com/tokens', {
+    let response = await fetch( `${baseUrl}/tokens`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

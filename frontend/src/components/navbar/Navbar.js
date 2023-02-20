@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { baseUrl } from "../../env_variables";
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`https://acebookers-5bku.onrender.com/search?q=${encodeURIComponent(searchTerm)}`)
+    fetch(`${baseUrl}/search?q=${encodeURIComponent(searchTerm)}`)
       .then(response => response.json())
       .then(data => {
         setSearchResults(data);

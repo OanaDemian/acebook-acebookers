@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { baseUrl } from "../../env_variables";
 import Comment from "../comment/Comment";
 import CreateComment from "../createComment/CreateComment";
+import { baseUrl } from "../../env_variables";
 
 const Comments = ({ post_id }) => {
   const [comments, setComments] = useState([]);
@@ -10,7 +12,7 @@ const Comments = ({ post_id }) => {
   // Changing the state of the comments and token hooks
   useEffect(() => {
     if (token) {
-      fetch("https://acebookers-5bku.onrender.com/comments", {
+      fetch(`${baseUrl}/comments`, {
         headers: {
           Authorization: `Bearer ${token}`,
           post_id: `${post_id}`,

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { baseUrl } from "../../env_variables";
 import './Createpost.css';
+import { baseUrl } from "../../env_variables";
 // Passing down the necessary props from the Feed component
 const CreatePost = ({setPosts, token}) => {
   const [title, setTitle] = useState("");
@@ -9,7 +11,7 @@ const CreatePost = ({setPosts, token}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let response = await fetch("https://acebookers-5bku.onrender.com/posts", {
+    let response = await fetch(`${baseUrl}/posts`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +30,7 @@ const CreatePost = ({setPosts, token}) => {
         setTitle("")
         setContent("")
         setPhoto("")
-        let responseTwo = await fetch("https://acebookers-5bku.onrender.com/posts", {
+        let responseTwo = await fetch(`${baseUrl}/posts`, {
           headers: {
             // token is now the token returned from the fetch request
             Authorization: `Bearer ${data.token}`,

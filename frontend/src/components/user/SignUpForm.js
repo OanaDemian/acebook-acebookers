@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SignUpForm.css";
+import { baseUrl } from "../../env_variables";
 
 const SignUpForm = ({ navigate }) => {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ const SignUpForm = ({ navigate }) => {
     event.preventDefault();
     if (validateEmail()) {
       setEmailError(false);
-      fetch("https://acebookers-5bku.onrender.com/users", {
+      fetch(`${baseUrl}/users`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",

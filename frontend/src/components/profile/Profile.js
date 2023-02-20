@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Profile.css";
+import { baseUrl } from "../../env_variables";
 
 const Profile = ({userId}) => {
   const [user, setUser] = useState(null);
 
   useEffect(() =>{
-    fetch(`https://acebookers-5bku.onrender.com/users/user${userId}`)
+    fetch(`${baseUrl}/users/user${userId}`)
       .then(response => response.json())
       .then(data => setUser(data))
       .catch(error => console.log(error));
