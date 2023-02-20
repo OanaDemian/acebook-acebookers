@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { baseUrl } from "../../env_variables";
 import './Createpost.css';
-import { baseUrl } from "../../env_variables";
+
 // Passing down the necessary props from the Feed component
 const CreatePost = ({setPosts, token}) => {
   const [title, setTitle] = useState("");

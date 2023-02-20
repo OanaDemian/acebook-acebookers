@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { baseUrl } from "../../env_variables";
 import Comments from "../comment/Comments";
 import "./Post.css";
-import { baseUrl } from "../../env_variables";
 
 const Post = ({ post, token, setPosts}) => {
   //if statement for whether there is a photo or not

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { baseUrl } from "../../env_variables";
 import Comment from "../comment/Comment";
 import CreateComment from "../createComment/CreateComment";
-import { baseUrl } from "../../env_variables";
 
 const Comments = ({ post_id }) => {
   const [comments, setComments] = useState([]);
